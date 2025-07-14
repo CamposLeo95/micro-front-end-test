@@ -8,14 +8,14 @@ export default defineConfig({
     federation({
       name: 'remote_clients',
       filename: 'remoteEntry.js',
-      exposes: { './HelloClients': './src/HelloClients.tsx' },
+      exposes: { 
+        './HelloClients': './src/HelloClients.tsx',
+        './ButtonClient': './src/ButtonClient.tsx',
+      },
       shared: ['react', 'react-dom'],
     }),
   ],
   build: { target: 'esnext', cssCodeSplit: false },
   server: { port: 5002, strictPort: true },
-  preview: {
-    port: 5002,         // use a porta que você quiser
-    strictPort: true,
-  },
+  preview: { port: 5002, strictPort: true},
 });
